@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AppPedraPapelTesoura</string>
+    <string name="btnPedra">Pedra</string>
+    <string name="btnPapel">Papel</string>
+    <string name="btnTesoura">Tesoura</string>
+    <string name="imgEmpate">Pois é, deu Empate</string>
+    <string name="imgPerdeu">Você ..... Perdeu 🙁</string>
+    <string name="imgGanhou">Você ..... ganhou 😁</string>
+    <string name="escolhaDoApp">Escolha do APP</string>
+    <string name="escolhaOP">Escolha uma das abaixo:</string>
+</resources>
