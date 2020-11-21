@@ -7,9 +7,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
-import org.w3c.dom.Text;
-
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,39 +33,43 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void opcaoSelecionada(String opcaoSelecionada) {
+    public void opcaoSelecionada(String opcaoSelecionada) {                 //recebe o parametro de uma das opções selecionadas pelo usuario
 
         ImageView imageResultado = findViewById(R.id.imageResultado);
         TextView textResultado = findViewById(R.id.textResultado);
         ImageView imageWin = findViewById(R.id.imageWin);
-        int numero = new Random().nextInt(3);
-        String[] opcoes = {"Pedra", "Papel", "Tesoura"};
-        String opcaoApp = opcoes[numero];
-        switch (opcaoApp) {
+        String[] opcoes = {"Pedra", "Papel", "Tesoura"};                    //Criando uma array de strings
+        int numero = new Random().nextInt(3);                       //Criando a variavel número e atribuindo a ela um número aleatório entre 0 e 3
+        String opcaoApp = opcoes[numero];                                   //opçãoApp recebe o valor dentro da array de string
+        switch (opcaoApp) {                                                 //se a opção aleatória for:
             case "Pedra":
-                imageResultado.setImageResource(R.drawable.pedra);
+                imageResultado.setImageResource(R.drawable.pedra);          //Pedra, configura a imagem como a da pedra
                 break;
             case "Papel":
-                imageResultado.setImageResource(R.drawable.papel);
+                imageResultado.setImageResource(R.drawable.papel);          //papel, configura a imagem como a do papel
                 break;
             case "Tesoura":
-                imageResultado.setImageResource(R.drawable.tesoura);
+                imageResultado.setImageResource(R.drawable.tesoura);        //tesoura, configura a imagem como a da tesoura
                 break;
         }
 
         imageWin.setVisibility(View.VISIBLE);
-        if ((opcaoApp == "Pedra" && opcaoSelecionada == "Tesoura") || (opcaoApp == "Tesoura" && opcaoSelecionada == "Papel") || (opcaoApp == "Papel" && opcaoSelecionada == "Pedra")) {             //App ganhador
+        if  ((opcaoApp == "Pedra" && opcaoSelecionada == "Tesoura") ||
+            (opcaoApp == "Tesoura" && opcaoSelecionada == "Papel") ||
+            (opcaoApp == "Papel" && opcaoSelecionada == "Pedra")) {             //Se algumas dessas opções foi verdadeira, o aplicativo é o ganhador
 
             textResultado.setText("Você perdeu :( ");
             imageWin.setImageResource(R.drawable.lose);
 
 
-        } else if ((opcaoApp == "Tesoura" && opcaoSelecionada == "Pedra") || (opcaoApp == "Papel" && opcaoSelecionada == "Tesoura") || (opcaoApp == "Pedra" && opcaoSelecionada == "Papel")) {             //Usuario Ganhador
+        } else if ((opcaoApp == "Tesoura" && opcaoSelecionada == "Pedra") ||
+                    (opcaoApp == "Papel" && opcaoSelecionada == "Tesoura") ||
+                    (opcaoApp == "Pedra" && opcaoSelecionada == "Papel")) {             ////Se algumas dessas opções foi verdadeira, o usuário é o ganhador
 
             textResultado.setText("Você ganhou :D");
             imageWin.setImageResource(R.drawable.win);
 
-        } else {                                                                    //empate
+        } else {                                                                    //Caso contrário, é empate
             textResultado.setText("EMPATE!!!!");
             imageWin.setImageResource(R.drawable.draw);
 
