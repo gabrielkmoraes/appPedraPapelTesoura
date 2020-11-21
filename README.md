@@ -8,4 +8,6 @@ Através da biblioteca padrão do Java, a java.until.Random, foi possível reali
 
 
 ##Funcionamento:
+
+
 ![GIF do funcionamento do aplicativo](https://github.com/gabrielkmoraes/appPedraPapelTesoura/blob/master/Gif%20App.gif)
